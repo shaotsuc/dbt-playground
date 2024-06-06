@@ -1,0 +1,8 @@
+sources:
+  - name: super_shop
+    database: fifth-glider-352817  
+    schema: super_shop
+    tables:
+      - name: orders_raw
+      - name: people_raw
+      - name: returns_raw

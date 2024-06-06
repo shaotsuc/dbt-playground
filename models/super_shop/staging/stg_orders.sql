@@ -19,4 +19,4 @@ SELECT
   Sales AS sales,
   Segment AS buyer_segment,
   `Ship Mode` AS ship_mode,
-FROM `fifth-glider-352817`.`super_shop_raw`.`orders_raw`
+FROM {{ source('super_shop', 'orders_raw') }}
