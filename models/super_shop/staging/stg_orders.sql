@@ -22,7 +22,7 @@ SELECT
    */
   Sales - Profit AS cost,
   Profit AS profit,
-  SAFE_DIVIDE(Profit,Sales) AS margin,
   Segment AS buyer_segment,
   `Ship Mode` AS ship_mode,
+  CASE WHEN Sales >= 2000 THEN TRUE ELSE FALSE END AS is_high_sales_amt,
 FROM {{ source('super_shop', 'orders_raw') }}
