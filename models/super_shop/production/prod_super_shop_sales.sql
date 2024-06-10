@@ -13,7 +13,29 @@ returns AS (
 )
 
 SELECT
-    o.*,
+    o.order_date,
+    o.ship_date,
+    o.order_id,
+    o.customer_id,
+    o.customer_name,
+    o.buyer_segment,
+    o.country,
+    o.region,
+    o.state,
+    o.postal_code,
+    o.city,
+    o.product_category,
+    o.product_sub_category,
+    o.product_id,
+    o.product_name,
+    o.ship_mode,
+    o.gross_sales,
+    o.discount_percent,
+    o.net_sales,
+    o.quantity,
+    o.net_sales - o.profit AS cost,
+    o.profit,
+    o.is_high_sales_amt,
     m.manager,
     COALESCE(is_returned, FALSE) as is_returned
 FROM {{ ref('stg_orders') }} AS o

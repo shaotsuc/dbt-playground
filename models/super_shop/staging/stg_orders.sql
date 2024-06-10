@@ -4,7 +4,7 @@ SELECT
   `Order ID` AS order_id,
   `Customer ID` AS customer_id,
   `Customer Name` AS customer_name,
-  Discount AS discount,
+  Discount AS discount_percent,
   Country AS country,
   Region AS region,
   State AS state,
@@ -14,13 +14,9 @@ SELECT
   `Sub-Category` AS product_sub_category,
   `Product ID` AS product_id,
   `Product Name` AS product_name,
-  Sales AS sales,
+  Sales AS gross_sales,
+  CASE WHEN Discount > 0 THEN (1 - Discount) * Sales ELSE Sales END AS net_sales,
   Quantity AS quantity,
-  /* 
-  Ideally, the straightforward business rule for the cost. 
-  However, it's always good to double-confirm with the stakeholders how they want it to be calculated.
-   */
-  Sales - Profit AS cost,
   Profit AS profit,
   Segment AS buyer_segment,
   `Ship Mode` AS ship_mode,
