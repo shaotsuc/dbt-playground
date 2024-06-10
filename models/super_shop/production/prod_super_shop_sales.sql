@@ -35,9 +35,13 @@ SELECT
     o.quantity,
     o.net_sales - o.profit AS cost,
     o.profit,
-    o.is_high_sales_amt,
+    CASE 
+        WHEN o.net_sales >= 2000 AND COALESCE(r.is_returned, FALSE) = FALSE 
+        THEN TRUE 
+        ELSE FALSE 
+    END AS is_high_value_sales,
     m.manager,
-    COALESCE(is_returned, FALSE) as is_returned
+    COALESCE(r.is_returned, FALSE) as is_returned
 FROM {{ ref('stg_orders') }} AS o
 LEFT JOIN `manager` m ON o.region = m.region
 LEFT JOIN `returns` r ON o.order_id = r.order_id
