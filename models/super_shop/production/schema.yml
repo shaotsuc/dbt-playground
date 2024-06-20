@@ -1,9 +1,8 @@
 version: 2
 
-model:
+models:
   - name: prod_super_shop_sales
     description: This table is for super shop clients to monitor sales in different regions.
-
     columns:
       - name: order_date
         data_type: DATE
