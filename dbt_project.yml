@@ -1,9 +1,9 @@
-name: 'super_shop'
+name: 'dbt_playground'
 version: '1.0.0'
 config-version: 2
 
 
-profile: 'super_shop'
+profile: 'dbt_playground'
 
 
 model-paths: ["models"]

@@ -1,0 +1,6 @@
+sources:
+  - name: game_of_throne
+    database: fifth-glider-352817  
+    schema: game_of_throne
+    tables:
+      - name: seed_deaths
