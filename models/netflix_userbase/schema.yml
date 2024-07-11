@@ -1,0 +1,6 @@
+sources:
+  - name: netflix_userbase
+    database: fifth-glider-352817  
+    schema: netflix_userbase
+    tables:
+      - name: userbase
