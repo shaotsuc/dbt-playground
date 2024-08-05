@@ -1,0 +1,6 @@
+sources:
+  - name: city_weather
+    database: fifth-glider-352817  
+    schema: city_weather
+    tables:
+      - name: seed_city_weather
